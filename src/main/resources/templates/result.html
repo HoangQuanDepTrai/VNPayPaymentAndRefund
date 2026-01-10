@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Kết quả thanh toán | Lunar Cinema</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-900 min-h-screen flex items-center justify-center p-6 text-center text-white">
-<div class="max-w-sm bg-slate-800 p-10 rounded-3xl border border-slate-700 shadow-xl">
-    <div class="text-5xl mb-6">💎</div>
-    <h2 class="text-xl font-bold mb-8 leading-relaxed" th:text="${msg}"></h2>
-    <a href="/" class="px-8 py-3 bg-slate-700 hover:bg-slate-600 rounded-full text-sm transition-all">Quay lại trang
-        chủ</a>
+<body class="bg-slate-900 text-slate-200 font-['Inter'] min-h-screen flex items-center justify-center p-4">
+<div class="max-w-md w-full bg-slate-800 p-8 rounded-3xl border border-slate-700 shadow-2xl text-center">
+    <div class="mb-6">
+        <div th:if="${msg.contains('✅')}" class="w-20 h-20 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto text-4xl">
+            ✓
+        </div>
+        <div th:if="${msg.contains('🧨') || msg.contains('❌')}" class="w-20 h-20 bg-amber-500/20 text-amber-500 rounded-full flex items-center justify-center mx-auto text-4xl font-bold">
+            !
+        </div>
+    </div>
+
+    <h2 class="text-xl font-bold mb-4 text-white uppercase tracking-wider">Thông báo hệ thống</h2>
+
+    <p class="text-slate-400 text-sm leading-relaxed mb-8" th:text="${msg}"></p>
+
+    <div class="space-y-3">
+        <a href="/" class="block w-full py-3 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-xl transition-all uppercase text-xs tracking-widest">
+            Quay lại trang chủ
+        </a>
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">Lunar Cinema - Cảm ơn quý khách</p>
+    </div>
 </div>
 </body>
 </html>
