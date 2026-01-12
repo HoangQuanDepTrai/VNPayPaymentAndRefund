@@ -16,5 +16,4 @@ public class Seat {
     @Id
     private String id;
     private boolean booked;
-    // Bỏ hẳn cột version ở đây đi ông giáo! ( ͡° ͜ʖ ͡°)
 }
